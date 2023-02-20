@@ -25,7 +25,19 @@ const QouteForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // do something with the form data, e.g. submit to a server
+    const data = {
+      firstName,
+      lastName,
+      email,
+      message,
+    };
+
+    console.log(data);
+
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
   };
   return (
     <div className={styles.container}>
