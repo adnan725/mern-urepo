@@ -1,0 +1,42 @@
+@import "./../../../src/styles/variables";
+@import "./../../../src/styles/mixins";
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: $color-background;
+  @include flex(row, center, center);
+
+  .wrapper {
+    width: 90%;
+    height: 90vh;
+    @include flex(column, center, center);
+    border: 1px solid $color-secondary;
+  }
+
+  .heading,
+  .mainBody,
+  .author {
+    width: 100%;
+    padding: 1rem 2rem;
+    color: $color-secondary;
+    @include flex(row, center, center);
+  }
+
+  .heading {
+    height: 15%;
+    font-size: 2rem;
+    border-bottom: 1px solid $color-secondary;
+  }
+  .mainBody {
+    height: 70%;
+  }
+
+  .author {
+    gap: 0.5rem;
+    height: 15%;
+    font-size: 0.9rem;
+    border-top: 1px solid $color-secondary;
+    @include flex(column, flex-start, center);
+  }
+}
