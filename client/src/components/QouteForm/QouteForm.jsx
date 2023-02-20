@@ -35,22 +35,35 @@ const QouteForm = () => {
           <input
             type="text"
             value={firstName}
+            placeholder="John"
             onChange={handleFirstNameChange}
           />
         </div>
         <div className={`${styles.lastName} ${styles.input}`}>
           <label>Last Name:</label>
-          <input type="text" value={lastName} onChange={handleLastNameChange} />
+          <input
+            type="text"
+            value={lastName}
+            placeholder="Smith"
+            onChange={handleLastNameChange}
+          />
         </div>
         <div className={`${styles.email} ${styles.input}`}>
           <label>Email:</label>
-          <input type="email" value={email} onChange={handleEmailChange} />
+          <input
+            type="email"
+            value={email}
+            placeholder="user@gmail.com"
+            onChange={handleEmailChange}
+          />
         </div>
         <div className={`${styles.qoute} ${styles.input}`}>
           <label>Message:</label>
           <textarea value={message} onChange={handleMessageChange} />
         </div>
-        <button type="submit">Submit</button>
+        <button className={styles.submitButton} type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
