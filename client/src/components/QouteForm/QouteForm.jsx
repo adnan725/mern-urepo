@@ -5,6 +5,7 @@ const QouteForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [heading, setHeading] = useState("");
   const [message, setMessage] = useState("");
 
   const handleFirstNameChange = (event) => {
@@ -19,6 +20,10 @@ const QouteForm = () => {
     setEmail(event.target.value);
   };
 
+  const handleHeadingChange = (event) => {
+    setHeading(event.target.value);
+  };
+
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
   };
@@ -29,6 +34,7 @@ const QouteForm = () => {
       firstName,
       lastName,
       email,
+      heading,
       message,
     };
 
@@ -37,6 +43,7 @@ const QouteForm = () => {
     setFirstName("");
     setLastName("");
     setEmail("");
+    setHeading("");
     setMessage("");
   };
   return (
@@ -69,8 +76,21 @@ const QouteForm = () => {
             onChange={handleEmailChange}
           />
         </div>
+        <div className={`${styles.heading} ${styles.input}`}>
+          <label>Heading:</label>
+          <input
+            type="text"
+            value={email}
+            placeholder="Benefits of Healty Life"
+            onChange={handleHeadingChange}
+          />
+        </div>
+        <div className={`${styles.date} ${styles.input}`}>
+          <label>Date:</label>
+          <input type="date" value={email} onChange={handleHeadingChange} />
+        </div>
         <div className={`${styles.qoute} ${styles.input}`}>
-          <label>Message:</label>
+          <label>Article:</label>
           <textarea value={message} onChange={handleMessageChange} />
         </div>
         <button className={styles.submitButton} type="submit">
