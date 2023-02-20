@@ -1,4 +1,5 @@
 import styles from "./AllQuotes.module.scss";
+import QuoteCard from "../QuoteCard/QuoteCard";
 
 const AllQuotes = () => {
   const ALL_QUOTES = [
@@ -69,14 +70,16 @@ const AllQuotes = () => {
     },
   ];
 
+  const cardClickHanlder = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         {ALL_QUOTES.map((quote) => (
-          <div className={styles.qouteCard}>
-            <div className={styles.heading}>{quote.article.heading}</div>
-            <div className={styles.body}>{quote.article.content}</div>
-            <div className={styles.author}>Name: {quote.author.name}</div>
+          <div onClick={() => cardClickHanlder(quote.id)} key={quote.id}>
+            <QuoteCard props={quote} />
           </div>
         ))}
       </div>
