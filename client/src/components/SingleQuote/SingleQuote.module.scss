@@ -29,7 +29,14 @@
     border-bottom: 1px solid $color-secondary;
   }
   .mainBody {
+    gap: 2rem;
     height: 70%;
+    @include flex(column, center, flex-start);
+
+    .content {
+      gap: 0.75rem;
+      @include flex(column, flex-start, center);
+    }
   }
 
   .author {
