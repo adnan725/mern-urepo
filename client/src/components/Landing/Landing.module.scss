@@ -1,0 +1,40 @@
+@import "./../../../src/styles/variables";
+@import "./../../../src/styles/mixins";
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  .navigation,
+  .footer {
+    width: 100%;
+    height: 10%;
+    padding: 1rem 3rem;
+    background-color: $color-secondary;
+  }
+
+  .navigation {
+    color: $color-primary;
+    @include flex(row, center, space-between);
+
+    .logo {
+      font-size: 2rem;
+    }
+
+    .linksWrapper {
+      width: 30%;
+
+      .navLinks {
+        width: 100%;
+        list-style: none;
+        @include flex(row, center, space-between);
+      }
+    }
+  }
+
+  .body {
+    width: 100%;
+    height: 80%;
+    padding: 1rem;
+  }
+}
