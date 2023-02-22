@@ -4,6 +4,14 @@
 .container {
   width: 100%;
   height: 100vh;
+  position: relative;
+
+  .sidebar {
+    top: 0;
+    right: 0;
+    z-index: 1111;
+    position: absolute;
+  }
 
   .navigation {
     width: 100%;
@@ -61,14 +69,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("../../../public/media/images/wallpaper.jpg");
 
     .bodyWrapper {
+      gap: 10%;
       width: 80%;
       height: 80%;
-      gap: 10%;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: $color-secondary;
 
       .headingWrapper,
       .actions {
@@ -95,6 +105,7 @@
       }
 
       .actions {
+        height: 50%;
         border-radius: 10px;
         background-color: $color-secondary-light;
 

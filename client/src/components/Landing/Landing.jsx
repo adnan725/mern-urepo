@@ -1,5 +1,6 @@
 import styles from "./Landing.module.scss";
 import { useState } from "react";
+import SideBar from "../SideBar/SideBar";
 
 const Landing = () => {
   const [isActive, setIsActive] = useState(false);
@@ -10,6 +11,9 @@ const Landing = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.sidebar}>
+        <SideBar />
+      </div>
       <div className={styles.navigation}>
         <div className={styles.logo}>Logo</div>
         <div className={styles.linksWrapper}>
