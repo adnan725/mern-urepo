@@ -119,3 +119,51 @@
     }
   }
 }
+
+@media (max-width: $extra-large) {
+  .welcome {
+    font-size: 4rem !important;
+  }
+
+  .heading {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: $large) {
+  .welcome {
+    font-size: 3rem !important;
+  }
+
+  .heading {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: $medium) {
+  .bodyWrapper {
+    gap: 2% !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+
+    .headingWrapper {
+      height: 20% !important;
+      width: 100% !important;
+    }
+
+    .welcome {
+      font-size: 2rem !important;
+    }
+
+    .heading {
+      font-size: 1.5rem !important;
+    }
+
+    .actions {
+      height: 20% !important;
+      width: 100% !important;
+      background-color: transparent !important;
+    }
+  }
+}
