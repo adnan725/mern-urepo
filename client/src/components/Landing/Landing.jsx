@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import SideBar from "../SideBar/SideBar";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebarActions } from "../../store/SidebarSlice";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const dispatch = useDispatch();
@@ -68,7 +69,9 @@ const Landing = () => {
             </p>
           </div>
           <div className={styles.actions}>
-            <button>Quotes page</button>
+            <Link className={styles.link} to={"/quotes"}>
+              Quotes page
+            </Link>
           </div>
         </div>
       </div>

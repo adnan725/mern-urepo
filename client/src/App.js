@@ -1,13 +1,16 @@
-import Spinner from "./components/Spinner/Spinner";
-import QouteForm from "./components/QouteForm/QouteForm";
-import SingleQoute from "./components/SingleQuote/SingleQuote";
-import AllQuotes from "./components/AllQuotes/AllQuotes";
 import Landing from "./components/Landing/Landing";
+import AllQuotesPage from "./pages/AllQuotesPage";
+import { Routes, Route } from "react-router-dom";
+import SingleQuotePage from "./pages/SingleQuotePage";
 
 function App() {
   return (
     <div>
-      <Landing />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/quotes" element={<AllQuotesPage />} />
+        <Route path="quotes/:id" element={<SingleQuotePage />} />
+      </Routes>
     </div>
   );
 }
