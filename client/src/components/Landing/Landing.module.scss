@@ -7,10 +7,11 @@
   position: relative;
 
   .sidebar {
-    top: 0;
-    right: 0;
+    top: 10%;
+    left: 50%;
     z-index: 1111;
     position: absolute;
+    transform: translateX(-50%);
   }
 
   .navigation {
