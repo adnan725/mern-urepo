@@ -33,6 +33,7 @@ const Landing = () => {
             <img
               className={styles.menuIcon}
               src={process.env.PUBLIC_URL + "media/images/menu.png"}
+              alt="hamburger"
             />
           </div>
         ) : (
