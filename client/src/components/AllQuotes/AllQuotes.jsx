@@ -1,5 +1,6 @@
 import styles from "./AllQuotes.module.scss";
 import QuoteCard from "../QuoteCard/QuoteCard";
+import { Link } from "react-router-dom";
 
 const AllQuotes = () => {
   const ALL_QUOTES = [
@@ -78,9 +79,14 @@ const AllQuotes = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         {ALL_QUOTES.map((quote) => (
-          <div onClick={() => cardClickHanlder(quote.id)} key={quote.id}>
+          <Link
+            to={`/quotes/${quote.id}`}
+            className={styles.link}
+            onClick={() => cardClickHanlder(quote.id)}
+            key={quote.id}
+          >
             <QuoteCard props={quote} />
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -2,6 +2,7 @@ import Landing from "./components/Landing/Landing";
 import AllQuotesPage from "./pages/AllQuotesPage";
 import { Routes, Route } from "react-router-dom";
 import SingleQuotePage from "./pages/SingleQuotePage";
+import Spinner from "./components/Spinner/Spinner";
 
 function App() {
   return (
