@@ -19,8 +19,13 @@ mongoose
     console.log("Database connection successful");
   });
 
-const port = process.env.PORT || 3000;
+app.get("/hello", (req, res) => {
+  res.send("hello from Server");
+});
+
+const host = "localhost";
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-  console.log(`MERN-App is running on port ${port}`);
+  console.log(`MERN-App is running on http://${host}:${port}`);
 });

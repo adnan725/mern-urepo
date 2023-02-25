@@ -65,8 +65,6 @@ const SingleQoute = () => {
     setIsLoading(false);
   }, []);
 
-  const empQuote = Object.keys(quote).length === 0 ? true : false;
-
   return (
     <>
       {isLoading ? (
