@@ -6,9 +6,9 @@ const QuoteCard = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.qouteCard}>
-        <div className={styles.heading}>{quote.article.heading}</div>
-        <div className={styles.body}>{quote.article.content}</div>
-        <div className={styles.author}>{`Author: ${quote.author.name}`}</div>
+        <div className={styles.heading}>{quote.heading}</div>
+        <div className={styles.body}>{quote.content}</div>
+        <div className={styles.author}>{`Author: ${quote.name}`}</div>
       </div>
     </div>
   );
