@@ -21,7 +21,8 @@ const quoteSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
-  timeStamp: true,
 });
 
-const Quote = new model("Quote", quoteSchema);
+const Quote = mongoose.model("Quote", quoteSchema);
+
+module.exports = Quote;
