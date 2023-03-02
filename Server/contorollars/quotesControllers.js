@@ -30,3 +30,8 @@ exports.createQuote = async (req, res) => {
     quote,
   });
 };
+
+exports.deleteQuote = async (req, res) => {
+  const id = req.params.id;
+  Quote.deleteOne({ _id: id });
+};

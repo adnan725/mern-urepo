@@ -8,4 +8,6 @@ router
   .get(quotesController.getAllQuotes)
   .post(quotesController.createQuote);
 
+router.route("/quotes/:id").delete(quotesController.deleteQuote);
+
 module.exports = router;

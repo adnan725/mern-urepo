@@ -1,8 +1,17 @@
 import styles from "./QuoteCard.module.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const QuoteCard = (props) => {
   const quote = props.quote;
+
+  const deleteQuoteHandler = (id) => {
+    try {
+      axios.delete(`http://localhost:3001/quotes/${id}`);
+    } catch (error) {
+      console(error);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -20,7 +29,7 @@ const QuoteCard = (props) => {
         <div className={styles.body}>{quote.content}</div>
         <div className={styles.author}>
           <span>{`Author: ${quote.name}`}</span>
-          <button>Delete</button>
+          <button onClick={() => deleteQuoteHandler(quote._id)}>Delete</button>
         </div>
       </div>
     </div>
