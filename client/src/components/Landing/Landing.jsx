@@ -72,6 +72,9 @@ const Landing = () => {
             <Link className={styles.link} to={"/quotes"}>
               Quotes page
             </Link>
+            <Link className={styles.link} to={"/addQuote"}>
+              Write Quote
+            </Link>
           </div>
         </div>
       </div>

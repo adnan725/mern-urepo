@@ -17,7 +17,6 @@ const SingleQoute = () => {
       try {
         const quotes = await axios.get("http://localhost:3001/quotes");
         const quotesData = await quotes.data.quotes;
-        console.log(quotesData);
         const q = await quotesData.find((qt) => qt._id === quoteParam);
         setQuote(q);
         setIsLoading(false);
