@@ -1,4 +1,5 @@
 import styles from "./QuoteCard.module.scss";
+import { Link } from "react-router-dom";
 
 const QuoteCard = (props) => {
   const quote = props.quote;
@@ -6,7 +7,16 @@ const QuoteCard = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.qouteCard}>
-        <div className={styles.heading}>{quote.heading}</div>
+        <div className={styles.heading}>
+          <span>{quote.heading}</span>
+          <Link
+            to={`/quotes/${quote._id}`}
+            className={styles.link}
+            key={quote.id}
+          >
+            Read
+          </Link>
+        </div>
         <div className={styles.body}>{quote.content}</div>
         <div className={styles.author}>
           <span>{`Author: ${quote.name}`}</span>

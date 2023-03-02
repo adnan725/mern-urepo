@@ -33,13 +33,7 @@ const AllQuotes = () => {
           <div className={styles.wrapper}>
             {allQuotes.map((quote) => (
               <div key={quote._id}>
-                <Link
-                  to={`/quotes/${quote._id}`}
-                  className={styles.link}
-                  key={quote.id}
-                >
-                  <QuoteCard quote={quote} />
-                </Link>
+                <QuoteCard quote={quote} />
               </div>
             ))}
           </div>
