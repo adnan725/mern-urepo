@@ -1,65 +1,24 @@
-const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
+const connectToDB = require("./config/connectToDB");
 const express = require("express");
 const mongoose = require("mongoose");
-const Quote = require("./modals/quoteModal");
 const app = express();
 app.use(express.json());
-
 const cors = require("cors");
+const quotesController = require("./contorollars/quotesControllers");
 
 app.use(cors());
-
 mongoose.set("strictQuery", false);
 
-const DB = process.env.DATABASE.replace(
-  "<password>",
-  process.env.DATABASE_PASSWORD
-);
+// connect to the database
+connectToDB();
 
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Database connection successful");
-  })
-  .catch((error) => {
-    console.log(`Database is not connected ${error}`);
-  });
+//Routes
 
-app.get("/quotes", async (req, res) => {
-  try {
-    const quotes = await Quote.find();
-    res.status(200).json({
-      quotes,
-    });
-  } catch (err) {
-    res.status(500).json({
-      message: err.message,
-    });
-  }
-});
+app.get("/quotes", quotesController.getAllQuotes);
 
-app.post("/quotes", async (req, res) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const heading = req.body.heading;
-  const content = req.body.content;
+app.post("/quotes", quotesController.createQuote);
 
-  const quote = await Quote.create({
-    name,
-    email,
-    heading,
-    content,
-  });
-
-  res.status(200).json({
-    quote,
-  });
-});
-
+// Server
 const host = "localhost";
 const port = process.env.PORT || 8000;
 
