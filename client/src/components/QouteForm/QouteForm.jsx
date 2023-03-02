@@ -7,6 +7,8 @@ const QouteForm = () => {
   const [email, setEmail] = useState("");
   const [heading, setHeading] = useState("");
   const [content, setContent] = useState("");
+  const [isCreatedQuote, setIsCreatedQuote] = useState(false);
+  const [isQuoteWritten, setIsQuoteWritten] = useState(null);
 
   const handleFirstNameChange = (event) => {
     setName(event.target.value);
@@ -36,6 +38,8 @@ const QouteForm = () => {
     axios
       .post("http://localhost:3001/quotes", data)
       .then((response) => {
+        setIsQuoteWritten(response.data.quote.heading);
+        setIsCreatedQuote(true);
         return response.statusText;
       })
       .catch((error) => {
@@ -49,6 +53,9 @@ const QouteForm = () => {
   };
   return (
     <div className={styles.container}>
+      {isCreatedQuote && (
+        <p className={styles.success}>{`'${isQuoteWritten}' is created!`}</p>
+      )}
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={`${styles.firstName} ${styles.input}`}>
           <label>First Name:</label>

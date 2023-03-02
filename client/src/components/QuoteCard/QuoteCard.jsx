@@ -1,5 +1,6 @@
 import styles from "./QuoteCard.module.scss";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import axios from "axios";
 
 const QuoteCard = (props) => {
@@ -8,8 +9,8 @@ const QuoteCard = (props) => {
   const deleteQuoteHandler = async (id) => {
     const url = `http://localhost:3001/quotes/${id}`;
     try {
-      const responce = axios.delete(url);
-      console.log(responce);
+      await axios.delete(url);
+      window.location.reload(false);
     } catch (error) {
       console(error);
     }
