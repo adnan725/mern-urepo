@@ -6,6 +6,10 @@ const Quote = require("./modals/quoteModal");
 const app = express();
 app.use(express.json());
 
+const cors = require("cors");
+
+app.use(cors());
+
 mongoose.set("strictQuery", false);
 
 const DB = process.env.DATABASE.replace(

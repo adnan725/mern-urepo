@@ -1,7 +1,7 @@
 import styles from "./QuoteCard.module.scss";
 
 const QuoteCard = (props) => {
-  const quote = props.props;
+  const quote = props.quotes;
 
   return (
     <div className={styles.container}>
