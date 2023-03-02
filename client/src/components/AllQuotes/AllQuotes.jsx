@@ -30,13 +30,17 @@ const AllQuotes = () => {
         <Spinner />
       ) : (
         <div className={styles.container}>
-          <div className={styles.wrapper}>
-            {allQuotes.map((quote) => (
-              <div key={quote._id}>
-                <QuoteCard quote={quote} />
-              </div>
-            ))}
-          </div>
+          {allQuotes.length === 0 ? (
+            <div className={styles.noQuotes}> No Quotes Available</div>
+          ) : (
+            <div className={styles.wrapper}>
+              {allQuotes.map((quote) => (
+                <div key={quote._id}>
+                  <QuoteCard quote={quote} />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </>

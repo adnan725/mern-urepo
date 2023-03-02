@@ -8,6 +8,10 @@
   background-color: $color-background;
   @include flex(row, flex-start, center);
 
+  .noQuotes {
+    color: $color-secondary;
+  }
+
   .wrapper {
     gap: 3%;
     width: 90%;
