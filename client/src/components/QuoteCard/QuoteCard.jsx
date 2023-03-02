@@ -26,7 +26,7 @@ const QuoteCard = (props) => {
             className={styles.link}
             key={quote.id}
           >
-            Read
+            Read →
           </Link>
         </div>
         <div className={styles.body}>{quote.content}</div>
