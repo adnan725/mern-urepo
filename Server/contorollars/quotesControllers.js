@@ -26,12 +26,26 @@ exports.createQuote = async (req, res) => {
     content,
   });
 
-  res.status(200).json({
-    quote,
-  });
+  try {
+    res.status(201).json({
+      quote,
+    });
+  } catch (err) {
+    res.status(500).send({
+      error: err.message,
+    });
+  }
 };
 
 exports.deleteQuote = async (req, res) => {
   const id = req.params.id;
-  Quote.deleteOne({ _id: id });
+
+  try {
+    await Quote.deleteOne({ _id: id });
+    res.status(204).send("Deleted successfully");
+  } catch (err) {
+    res.status(500).send({
+      error: err.message,
+    });
+  }
 };

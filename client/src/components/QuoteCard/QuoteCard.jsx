@@ -5,9 +5,11 @@ import axios from "axios";
 const QuoteCard = (props) => {
   const quote = props.quote;
 
-  const deleteQuoteHandler = (id) => {
+  const deleteQuoteHandler = async (id) => {
+    const url = `http://localhost:3001/quotes/${id}`;
     try {
-      axios.delete(`http://localhost:3001/quotes/${id}`);
+      const responce = axios.delete(url);
+      console.log(responce);
     } catch (error) {
       console(error);
     }
