@@ -38,7 +38,7 @@ const AllQuotes = () => {
                   className={styles.link}
                   key={quote.id}
                 >
-                  <QuoteCard quotes={quote} />
+                  <QuoteCard quote={quote} />
                 </Link>
               </div>
             ))}
